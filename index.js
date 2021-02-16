@@ -18,6 +18,7 @@ Do the following:
    HINT: no function required
 */
 
+var votingAge = 18;
 
 
 /*
@@ -31,9 +32,14 @@ Do the following:
    HINT: no function required
 */
 
+var one = 1;
+var two = 2;
 
+if (two === 2) {
+  one = 3
+}
 
-
+console.log(one);
 
 /*
 Task 1c - Convert Strings to Numbers
@@ -46,7 +52,7 @@ Do the following:
    HINT: look up the Number method
 */
 
-
+console.log(Number('1999'));
 
 
 /*
@@ -58,9 +64,9 @@ Do the following:
    3. Multiply a and b and return the answer
 */
 
-function multiply(/*add your code here*/){
-    /*add your code here*/
-  }
+function multiply(a, b){
+    return a * b;
+};
 
 
 
@@ -74,9 +80,9 @@ Do the following:
    3. Return the newly calculated age
 */
 
-function dogYears(/*add your code here*/){
-    /*add your code here*/
-}
+function dogYears(age){
+    return age * 7;
+};
 
 
 
@@ -107,9 +113,23 @@ Use the hungryDog function and feeding requirements below to do the following:
   NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.44999999999999996
 */  
 
-function hungryDog(/*add your code here*/){
-    /*add your code here*/
-  }
+function hungryDog(weight, age){
+  // adults
+	if (age > 1) {
+		if (weight <= 5) {
+			return weight * .05;
+		}
+		if (weight >= 6 && weight <= 10) {
+			return weight * .04;
+		}
+		if (weight >= 11 && weight <= 15) {
+			return weight * .03;
+		}
+		if (weight > 15) {
+			return weight * .02;
+		}
+	}
+}
 
 
 
@@ -134,9 +154,13 @@ Use the game function below to do the following:
   HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
 
+var computerChoice = Math.round(Math.random());
+
 function game(user, computer){
-    /*add your code here*/
-}
+  if (user === computer) {
+    return "it's a tie";
+  }
+};
   
   
 
@@ -151,9 +175,9 @@ Using the miles function below do the following:
   3. Return the number of miles
 */
 
-function miles(/*add your code here*/){
-    /*add your code here*/
-  }
+function miles(km){
+	return km * 0.621371;
+};
 
 
 
@@ -165,9 +189,9 @@ Using the feet function below do the following:
   3. Return number of feet
 */
 
-function feet(/*add your code here*/){
-    /*add your code here*/
-  }
+function feet(cm){
+	return cm / 30.48;
+};
  
 
 
@@ -201,9 +225,19 @@ Using the grade function below do the following:
    below should return 'you got an F'
 */
   
-function grade(/*Your Code here */){
-  /*Your Code here */
-  }
+function grade(score){
+  if (score >= 90 && score <= 100) {
+    return 'you got an A';
+  } else if (score >= 80 && score <= 89) {
+    return 'you got a B';
+  } else if (score >= 70 && score <= 79) {
+    return 'you got a C';
+  } else if (score >= 60 && score <= 69) {
+    return 'you got a D';
+  } else {
+    return 'you got an F';
+  };
+};
   
   
 
@@ -220,8 +254,8 @@ Using the vowelCounter function below do the following:
 */
 
 
-function vowelCounter(/*add your code here*/) {
-    /*add your code here*/
+function vowelCounter(string) {
+    // 
 }
 
 

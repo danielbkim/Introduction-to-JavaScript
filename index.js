@@ -166,12 +166,32 @@ Use the game function below to do the following:
   HINT: Remember that the order in which we pass in our arguments matters when it comes to parameters
 */
 
-var computerChoice = Math.round(Math.random());
+var computerChoice = Math.random();
+
+if (computerChoice <= 0.33) {
+	computerChoice = "Rock";
+} else if (computerChoice >= 0.34 && computerChoice <= .65) {
+	computerChoice = "Paper";
+} else {
+	computerChoice = "Scissors";
+}
 
 function game(user, computer){
   if (user === computer) {
     return "it's a tie";
-  }
+  } else if (user === "Scissors" && computer === "Paper") {
+		return "you win!"
+	} else if (user === "Paper" && computer === "Rock") {
+		return "you win!"
+	} else if (user === "Rock" && computer === "Scissors") {
+		return "you win!"
+	} else if (computer === "Scissors" && user === "Paper") {
+		return "you lose!"
+	} else if (computer === "Paper" && user === "Rock") {
+		return "you lose!"
+	} else {
+		return "you lose!"
+	}
 };
   
   
